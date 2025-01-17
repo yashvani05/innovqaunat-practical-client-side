@@ -22,7 +22,7 @@ const AdminLogin = () => {
       const response = await axiosInstance.post("/login/admin", credentials);
       alert("Login successful!");
       localStorage.setItem("authToken", response.data.token);
-      navigate("/admin-dashboard"); // Replace with actual admin dashboard route
+      navigate("/admin-dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Login failed");
     }
