@@ -26,12 +26,9 @@ const CustomerRegistration = ({ role }) => {
     onSubmit: async (values) => {
       try {
         const response = await axiosInstance.post("/register/customer", values);
-        console.log("response--", response);
-
         alert(response.message || "Customer registered successfully!");
         navigate("/login?role=customer");
       } catch (error) {
-        console.log("error---", error);
         alert(error.response?.data?.message || "Error registering customer");
       }
     },
